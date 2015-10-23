@@ -6,6 +6,7 @@ def show
 	@posts = Post.find(params[:id])
 	end
 def new
+	@posts = Post.new
 	end
 def create
 	end
