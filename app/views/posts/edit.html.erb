@@ -1,18 +1,16 @@
 <h1>Edit Post</h1>
-<%= form_tag post_path(@post), :method => :put do %>
+<h1>Create a New Post</h1>
+<%= form_for @post do |f| %>
 	<p>
-		<%= label :post, :title, 'Title' %></br>
-		<%= text_field :post, 'title' %>
+		<%= f.label :title %><br/>
+		<%= f.text_field :title %>
 	</p>
 	<p>
-		<%= label :post, :rating, 'Rating' %></br>
-		<%= select :post, :rating, ['G','PG','PG-13','R','NC-17'] %>
+		<%= f.label :content %><br/>
+		<%= f.text_area :content %>
 	</p>
 	<p>
-		<%= label :post, :release_date, 'Released On' %></br>
-		<%= date_select :post, :release_date %>
+		<%= f.submit"Save Changes" %>
 	</p>
-	<p>
-		<%= submit_tag 'Save Changes' %>
-	</p>
+	
 <% end %>

@@ -28,7 +28,7 @@ end
 def destroy
 	@post = Post.find(params[:id])
 	@post.destroy
-	flash[:notice] = "Post '#{@post.title}' deleted."
-	redirect_to post_path(@post)
+	#flash[:notice] = "Post '#{@post.title}' deleted."
+	redirect_to posts_path
 end
 end
