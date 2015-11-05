@@ -17,9 +17,18 @@ def create
 	end
 end
 def edit
-	end
+	@post = Post.find params[:id]
+end
 def update
-	end
+	@post = Post.find params[:id]
+	@post.update_attributes!(params[:post])
+	flash[:notice] = "#{@post.title} was successfully updated."
+	redirect_to post_path(@post)
+end
 def destroy
-	end
+	@post = Post.find(params[:id])
+	@post.destroy
+	flash[:notice] = "Post '#{@post.title}' deleted."
+	redirect_to post_path(@post)
+end
 end
