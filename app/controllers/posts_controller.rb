@@ -9,7 +9,7 @@ def new
 	@post = Post.new
 end
 def create
-	@post = Post.new(params.require(:post).permit(:title,:content))
+	@post = Post.new(params[:post])
 	if @post.save
 		redirect_to posts_path, :notice => "Successfully created!"
 	else
