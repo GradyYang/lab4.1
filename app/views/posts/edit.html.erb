@@ -1,0 +1,18 @@
+<h1>Edit Post</h1>
+<%= form_tag post_path(@post), :method => :put do %>
+	<p>
+		<%= label :post, :title, 'Title' %></br>
+		<%= text_field :post, 'title' %>
+	</p>
+	<p>
+		<%= label :post, :rating, 'Rating' %></br>
+		<%= select :post, :rating, ['G','PG','PG-13','R','NC-17'] %>
+	</p>
+	<p>
+		<%= label :post, :release_date, 'Released On' %></br>
+		<%= date_select :post, :release_date %>
+	</p>
+	<p>
+		<%= submit_tag 'Save Changes' %>
+	</p>
+<% end %>
